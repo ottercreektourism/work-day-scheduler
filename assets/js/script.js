@@ -16,7 +16,7 @@ var time16 = $('#hour-16');
 var time17 = $('#hour-17');
 
 // Array so the for loop can index through all time blocks for color coding them
-var times = [time9,time10, time11, time12, time13, time14, time15, time16, time17]
+var times = [time9, time10, time11, time12, time13, time14, time15, time16, time17]
 
 // Makes the save button save the description input to the local storage
 $(".saveBtn").click(function (event) {
