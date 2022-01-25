@@ -11,14 +11,15 @@
 //     currentTime = 
 
 // };
-var dateElement = $("#currentDay");
+// var dateElement = $("#currentDay");
+// var currentTime = moment().format('H');
 
 $(".saveBtn").click(function (event) {
     event.preventDefault();
     var saveData = $(this).siblings(".description").val();
-    console.log(saveData);
+    // console.log(saveData);
     var hourId = $(this).parent().attr("id");
-    console.log(hourId);
+    // console.log(hourId);
     localStorage.setItem(hourId, saveData);
     getSchedule();
 });
@@ -36,10 +37,42 @@ function getSchedule() {
 
 
 var dateTrackerElement = $('#currentDay');
+
 function timeTracker() {
     var currentDay = moment().format("MMM DD, YYYY [at] hh:mm:ss a");
-    $("currentDay").text(currentDay);
-    dateTrackerElement.textContent = currentDay;
+    dateTrackerElement.text(currentDay);
+    // dateTrackerElement.textContent = currentDay;
+    colorTime();
 
 }
 setInterval(timeTracker, 1000);
+
+// var currentTime = moment().format('H');
+var time9 = $('#9');
+var time10 = 10;
+var time11 = 11;
+var time12 = 12;
+var time1 = 13;
+var time2 = 14;
+var time3 = 15;
+var time4 = 16;
+var time5 = 17;
+
+function colorTime() {
+    if (currentTime == time9) {
+        $("#9 .description").addclass("present");
+    } else if (currentTime < time9) {
+        $("#9 .description").addclass("past");
+    } else {
+        $("#9 .description").addclass("future");
+    }
+    
+    if (currentTime == time10) {
+        $("#10 .description").addclass("present");
+    } else if (currentTime < time10) {
+        $("#10 .description").addclass("past");
+    } else {
+        $("#10 .description").addclass("future");
+    }
+};
+
